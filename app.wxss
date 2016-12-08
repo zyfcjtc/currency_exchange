@@ -1,0 +1,33 @@
+/**app.wxss**/
+.base_currency{
+  line-height: 40px;
+  height: 40px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.base_currency input{
+  height: 40px;
+  border: 1px solid #ddd;
+  background-color: "#fafafa";
+  width: 80%;
+  float: left;
+  text-align: right;
+  padding: 0 10px;
+}
+.base_currency text{
+  text-align: center;
+  width: 10%;
+  float: right;
+  line-height: 40px;
+}
+
+.exchange_currency{
+  padding: 10px;
+}
+.exchange_currency .element{
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+}

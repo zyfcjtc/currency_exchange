@@ -1,0 +1,31 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/settings/settings",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#00cbff",
+    "navigationBarTitleText": "Currency Exchange",
+    "navigationBarTextStyle":"#fff",
+    "backgroundColor": "#000000"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#268dcd",
+    "borderStyle": "white",
+    "backgroundColor": "#fafafa",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "images/home.png",
+      "selectedIconPath": "images/home-active.png",
+      "text": "Home"
+    },{
+      "pagePath": "pages/settings/settings",
+      "text": "Settings",
+      "iconPath": "images/settings.png",
+      "selectedIconPath": "images/settings-active.png"
+    }]
+  }
+}
