@@ -1,12 +1,14 @@
 <!--index.wxml-->
 <view class="base_currency">
-  <input type="text" placeholder="1.00" bindinput="bindKeyInput" maxlength="10" /><text>{{currency.base}}</text>
+  <input type="number" placeholder="1.00" bindinput="bindKeyInput" maxlength="10" /><text>{{currency.base}}</text>
+{{inputValue}}
 </view>
-<scroll-view style="height: 100%;" scroll-y="true" bindscroll="scroll" bindscrolltolower="scrolltolower">
-  <view wx:for="{{currency.rates}}" wx:for-index="dollar" wx:for-item="rate" wx:key="index">
+
+<scroll-view style="height: 100%;" scroll-y="true" bindscroll="scroll">
+  <view wx:for="{{currency}}" wx:key="index">
     <view class="exchange_currency">
-      <text class="element">{{rate}}</text>
-      <text class="element">{{dollar}}</text>
+      <text class="element-1-2">{{item}}</text>
+      <text class="element-1-2">{{index}}</text>
     </view>
   </view>
 </scroll-view>

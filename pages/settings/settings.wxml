@@ -1,0 +1,18 @@
+<view class="exchange_currency">
+    <text class="element-1-2">当前货币</text>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{currency}}">
+        <text class="element-1-2">{{base}}</text>
+    </picker>
+    
+</view>
+<scroll-view style="height: 100%;" scroll-y="true" bindscroll="scroll">
+  <checkbox-group bindchange="checkboxChange">
+  <view wx:for="{{list}}" wx:key="index">
+    <view class="exchange_currency">
+      <checkbox value="{{index}}" checked="{{item.checked}}"/>
+      <text class="element-2-5">{{item}}</text>
+      <text class="element-2-5">{{index}}</text>
+    </view>
+  </view>
+  </checkbox-group>
+</scroll-view>

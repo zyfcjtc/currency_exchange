@@ -23,10 +23,26 @@
 
 .exchange_currency{
   padding: 10px;
+  border-bottom: 1px solid #ddd;
 }
-.exchange_currency .element{
+.exchange_currency .element-1-2{
   display: inline-block;
   width: 50%;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+}
+.exchange_currency .element-1-5{
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+}
+
+.exchange_currency .element-2-5{
+  display: inline-block;
+  width: 40%;
   text-align: center;
   line-height: 40px;
   height: 40px;

@@ -1,27 +1,36 @@
 //index.js
 //获取应用实例
+var util = require('../../utils/util.js')
 var app = getApp()
 Page({
   data: {
-    inputValue: 1
+    base: "USD",
+    inputValue: 1,
+    currency: {}
   },
   //函数
   bindKeyInput: function(e) {
     this.setData({
-      inputValue: e.detail.value
+      inputValue: Number(e.detail.value),
     })
+    console.log(this.data.currency.rates.AUD)
   },
-
   //事件处理函数
   onLoad: function () {
     console.log('onLoad')
+
+    wx.setStorage({
+      key: 'base',
+      data: 'USD'
+    })
     var that = this
     wx.request({
       url: 'http://api.fixer.io/latest?base=USD',
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       success: function(res){
-        that.data.currency=res.data
-        console.log(res.data);
+        that.setData({
+          currency: res.data.rates
+        })
       }
     })
   }

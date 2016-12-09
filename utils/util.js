@@ -16,6 +16,10 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
+function formatTotal(rate, amount){
+  return (rate*amount).toFixed(2)
+}
+
 module.exports = {
   formatTime: formatTime
 }
