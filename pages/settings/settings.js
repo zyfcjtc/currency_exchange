@@ -3,7 +3,7 @@ Page({
   data: {
     base: "USD",
     currency: ['AUD','BGN','BRL','CAD','CHF','CNY','CZK','DKK','GBP','HKD','HRK','HUF'],
-    list: {}
+    symbols: []
   },
   //函数
   bindKeyInput: function(e) {
@@ -33,10 +33,16 @@ Page({
     })
   },
   checkboxChange: function(e) {
-    if(e.detail.value.length>5){
-        (e.detail.value).shift()
-    }
-    console.log( e.detail.value)
+    this.setData({
+      symbols: e.detail.value
+    })
+  },
+  setSymbol: function(){
+    console.log(this.data.symbols.toString())
+    wx.setStorage({
+      key: 'symbols',
+      data: this.data.symbols.toString(),
+    })
   },
   //事件处理函数
   onLoad: function () {

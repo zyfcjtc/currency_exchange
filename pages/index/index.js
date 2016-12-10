@@ -6,7 +6,8 @@ Page({
   data: {
     base: "USD",
     inputValue: 1,
-    currency: {}
+    currency: {},
+    symbols: "USD,CAD"
   },
   //函数
   bindKeyInput: function(e) {
@@ -17,15 +18,22 @@ Page({
   },
   //事件处理函数
   onLoad: function () {
-    console.log('onLoad')
+    var that = this
 
     wx.setStorage({
       key: 'base',
       data: 'USD'
     })
-    var that = this
+    if(wx.getStorage({key: 'symbols'})){
+      that.setData({
+        symbols: wx.getStorage({
+                  key: 'symbols',
+                  })
+      })
+    }
+
     wx.request({
-      url: 'http://api.fixer.io/latest?base=USD',
+      url: 'http://api.fixer.io/latest?base=USD&symbols='+that.data.symbols,
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       success: function(res){
         that.setData({

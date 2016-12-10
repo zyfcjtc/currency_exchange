@@ -1,9 +1,9 @@
 <view class="exchange_currency">
-    <text class="element-1-2">当前货币</text>
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{currency}}">
-        <text class="element-1-2">{{base}}</text>
+    <text class="element-1-3">当前货币</text>
+    <picker class="element-1-3" bindchange="bindPickerChange" value="{{index}}" range="{{currency}}">
+        <text>{{base}}</text>
     </picker>
-    
+    <text class="element-1-3" bindtap="setSymbol">确定</text>
 </view>
 <scroll-view style="height: 100%;" scroll-y="true" bindscroll="scroll">
   <checkbox-group bindchange="checkboxChange">
